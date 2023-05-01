@@ -1,2 +1,3 @@
 class Greeting < ApplicationRecord
+
 end
