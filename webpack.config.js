@@ -7,6 +7,11 @@ module.exports = {
   entry: {
     application: "./app/javascript/application.js"
   },
+  performance: {
+    hints: "warning",
+    maxAssetSize: 244 * 1024, // 244 KiB
+    maxEntrypointSize: 244 * 1024, // 244 KiB
+  },
   module: {
     rules: [
       {

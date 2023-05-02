@@ -2,12 +2,18 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import * as bootstrap from "bootstrap"
-import React from "react";
-import { createRoot } from "react-dom/client"
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/configureStore';
+import App from './components/App';
 
-document.addEventListener("turbo:load", () => {
-    const root = createRoot(
-        document.getElementById(root)
-    );
-    root.render(<h1>Hello World!</h1>);
-});
+ReactDOM.render(
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
+  document.getElementById('root'),
+);
